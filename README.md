@@ -27,8 +27,10 @@ sequenceDiagram
     loop Messages
         Client ->> Server: Client sends a message
         Server ->> Listeners: Broadcasts the message to all the listeners
-        Server ->> Client: Sends a response that the message has been sent.
+        Server ->> Client: Sends a response that the message has been sent
     end
+    Client ->> Server: Disconnects from the server
+    Server ->> Listeners: Broadcasts that the client has disconnected
 ```
 
 ### Server
@@ -91,7 +93,8 @@ And it'll start the web application in the port `5173`
 
 ## References
 
-- [Server Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
+- [Server-Sent Events (MDN)](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
+- [Server-Sent Events Crash Course (Hussein Nasser)](https://www.youtube.com/watch?v=4HlNv1qpZFY)
 
 ## Author
 
